@@ -1,5 +1,6 @@
 """
-Veille eu.eu-supply.com (SYNAPSE) — Notifications Discord
+Veille SYNAPSE — Notifications Discord
+By N0tad
 """
 
 import re, requests, threading, json, os, sys, time, gc, schedule
@@ -8,15 +9,17 @@ from datetime import datetime, timedelta
 
 # ─── CONFIG ───────────────────────────────────────────────────────────────────
 
-KEYWORDS        = ["cloison", "plafond", "menuiserie", "doublage", "isolation"]
+KEYWORDS        = ["cloison", "plafond", "menuiserie", "doublage", "isolation"] # à personnaliser
 BASE_URL        = "https://eu.eu-supply.com"
 PAGE_URL        = f"{BASE_URL}/ctm/supplier/publictenders?B=SYNAPSE"
 POST_URL        = f"{BASE_URL}/ctm/Supplier/publictenders/PublicTenders"
-DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1497169206695694436/6roh1yrAtNtjEqw67vY8NPOlBKMDo9RwsDnzxx_VjcAf496W3kU-K_PEOMFNC3lsiRVO"
+DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1497169206695694436/6roh1yrAtNtjEqw67vY8NPOlBKMDo9RwsDnzxx_VjcAf496W3kU-K_PEOMFNC3lsiRVO" # à personnaliser
 
 DIR         = os.path.dirname(os.path.abspath(__file__))
 FICHIER_VUS = os.path.join(DIR, "synapse_vus.json")
 FICHIER_LOG = os.path.join(DIR, "synapse_veille.log")
+
+# HEADER HTTP (Le User Agent utilisé ici est propre à moi)
 
 HEADERS = {
     "User-Agent":         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
