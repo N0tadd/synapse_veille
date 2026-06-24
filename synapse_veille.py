@@ -13,7 +13,7 @@ KEYWORDS        = ["cloison", "plafond", "menuiserie", "doublage", "isolation"] 
 BASE_URL        = "https://eu.eu-supply.com"
 PAGE_URL        = f"{BASE_URL}/ctm/supplier/publictenders?B=SYNAPSE"
 POST_URL        = f"{BASE_URL}/ctm/Supplier/publictenders/PublicTenders"
-DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1497169206695694436/6roh1yrAtNtjEqw67vY8NPOlBKMDo9RwsDnzxx_VjcAf496W3kU-K_PEOMFNC3lsiRVO" # à personnaliser
+DISCORD_WEBHOOK = "" # à personnaliser
 
 DIR         = os.path.dirname(os.path.abspath(__file__))
 FICHIER_VUS = os.path.join(DIR, "synapse_vus.json")
